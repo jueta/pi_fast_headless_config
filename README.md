@@ -19,17 +19,17 @@ Using the raspberry pi flasher, free download at https://www.raspberrypi.com/sof
 Navigate to your SD card directory.
 In MacOs would be:
 
-'''
+```
 cd /Volumes/{Flash card}
-'''
+```
 
 
 Inside boot directory (or bootfs in my case).
 Create an empty file named ssh (without any file extension). This file tells the Raspberry Pi to enable SSH on boot.
 
-'''
+```
 nano ssh
-'''
+```
 
 Just like this ssh is enabled. But it's just going to work if you have a first user set up in your raspberry.
 
@@ -39,16 +39,16 @@ Just like this ssh is enabled. But it's just going to work if you have a first u
 
 create an encrypted password:
 
-'''
+```
 echo '{yourPwd}' | openssl passwd -6 -stdin
-'''
+```
 
 In the same boot directory.
 Create a file called userconf.txt.
 
-'''
+```
 nano userconf.txt
-'''
+```
 
 Fill with just one line as follow: 
 
@@ -61,13 +61,13 @@ username:encryptedPwd
 In the same boot directory.
 Create a file named wpa_supplicant.conf.  
 
-'''
+```
 nano wpa_supplicant.conf
-'''
+```
 
 fill it with:
 
-'''
+```
  country=your_country_code
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -76,7 +76,7 @@ network={
     ssid="your_wifi_ssid"
     psk="your_wifi_password"
 }
-'''
+```
 
 ## 5 - SSH connection to raspberry pi
 
@@ -84,21 +84,21 @@ Insert the SD card in the raspberry, turn it on and wait 2 minutes to its first 
 
 With your computer connected to the same Wifi Network, check the machines connected to your local network.
 
-'''
+```
 arp -a
-'''
+```
 
 If you find a raspberry there, try to ping it.
 
-'''
+```
 ping raspberrypi
-'''
+```
 
 Try to ssh connect to it.
 
-'''
+```
 ssh pi@raspberrypi
-'''
+```
 
 
 ## 6 - Install VNC
@@ -106,17 +106,17 @@ ssh pi@raspberrypi
 In the raspberry terminal:
 Run the config to enable VNC.
 
-'''
+```
 raspi-config
-'''
+```
 
 Find it in interfaces (I think).
 
 install VNC:
 
-'''
+```
 sudo apt install realvnc-vnc-server realvnc-vnc-viewer
-'''
+```
 
 Install RealVNC app in your phone and connect to:
 
@@ -127,10 +127,10 @@ name: raspberrypi
 
 This is just because I wanted to watch Netflix and somehow the audio was not being outputed through HDMI. This will fix it.
 
-'''
+```
 sudo apt install leafpad
 sudo leafpad /boot/config.txt
-''' 
+```
 
 uncomment the line: 
 hdmi_drive=2
