@@ -1,14 +1,14 @@
 # pi_fast_headless_config
-Setting up a raspberry pi to be able to remotely connect through SSH and to its GUI through VNC, without need of external keyboard or mouse.
+Setting up a raspberry pi to be to remotely connected through SSH and to its GUI through VNC, without need of external keyboard or mouse.
 
 ## Idea
-This quick tutorial was created because I'm quite broke and I need something similar as a google chromecast to watch netflix with my friends at the living room. So why not try mith my raspberry pi. This is quite simple to do, just install VNC in your raspberry pi and your pc or phone and done! works like teamviewer and Netflix runs acceptable using a raspberry pi 3 B+. For sure, newer versions would be even better.
+This quick tutorial was created because I'm quite broke and I need something similar as a google chromecast to watch netflix with my friends at the living room. So why not try mith my raspberry pi. This is quite simple to do, just install VNC in your raspberry pi and your pc or phone and done! works like teamviewer and Netflix runs acceptable using a raspberry pi 3 B+. For sure, newer pi hardwares would be even better.
 
-The problem was that I had no keyboard or mouse at my new home to do the initial set up and install vnc in my pi. So, I decided to do it editing the OS files in the SD card. This way I can just insert the SD card in the raspberryPi and turn it, then everything will be ready to use it on my phone. While looking for the steps to do that I noticed that they were all separated in many simple small google searches. 
+The problem was, I had no external keyboard or mouse in my new home to do the initial set up and install vnc in my pi. So, I decided to do it editing the OS files in the SD card. This way I can just insert the SD card in the raspberryPi and turn it on, then everything will be ready to use it on my phone. While looking for the steps, I noticed that they were all separated in many simple small google searches. 
 I decided to summarize all then in just one tutorial, since I'll definetely use it again.
 
-If you just need the raspberry configured for remote access, do steps 1-5.
-If you want to also set up the VNC, continue until last step.
+If you just need the raspberry pi configured for remote access, do steps 1-5.
+If you also want to set up the VNC, continue until last step.
 
 # RECIPE
 
@@ -31,7 +31,7 @@ Create an empty file named ssh (without any file extension). This file tells the
 nano ssh
 ```
 
-Just like this ssh is enabled. But it's just going to work if you have a first user set up in your raspberry.
+Just like this, SHH is enabled. But it's just going to work if you have a first user set up in your raspberry.
 
 
 
@@ -118,7 +118,7 @@ install VNC:
 sudo apt install realvnc-vnc-server realvnc-vnc-viewer
 ```
 
-Install RealVNC app in your phone and connect to:
+Install RealVNC app in your phone and configure the pi connection:
 
 default address: raspberry.local:0 
 name: raspberrypi
